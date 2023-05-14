@@ -1,0 +1,44 @@
+.news {
+    width: 90%;
+    margin: 25px auto;
+}
+
+.newsCategory {
+    padding-bottom: 10px;
+    border-bottom: 2px dashed rgb(207, 207, 207);
+    text-align: center;
+}
+
+.newsCategory >span {
+    font-family: 'Yeseva One', cursive;
+    font-size: 40px;
+    padding: 5px 10px;
+    color: rgb(37, 37, 37);
+    border-radius: 7px;
+}
+
+.cardContainer {
+    margin-top: 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 17px;
+    padding: 7px;
+}
+
+.pageButtons {
+    display: flex;
+    justify-content: center;
+    gap: 5px;
+    margin-top: 20px;
+}
+
+.pageButtons >button {
+    padding: 10px;
+    background-color: rgb(172, 172, 172);
+    border: none;
+    font-family: 'Inter', sans-serif;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 50%;
+    aspect-ratio: 1/1;
+}
