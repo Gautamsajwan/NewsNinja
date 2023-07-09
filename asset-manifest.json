@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "/news-ninja/static/css/main.932e8f2f.css",
+    "main.js": "/news-ninja/static/js/main.41c4441b.js",
+    "static/media/spinner.svg": "/news-ninja/static/media/spinner.d5b19e8a2e8bce584137c2ba9d60f9bc.svg",
+    "index.html": "/news-ninja/index.html",
+    "main.932e8f2f.css.map": "/news-ninja/static/css/main.932e8f2f.css.map",
+    "main.41c4441b.js.map": "/news-ninja/static/js/main.41c4441b.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.932e8f2f.css",
+    "static/js/main.41c4441b.js"
+  ]
+}
