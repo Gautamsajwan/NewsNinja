@@ -11,8 +11,8 @@ function News(props) {
   const [totalResults, setTotalResults] = useState(0)
   const [loading, setLoading] = useState(false)
 
-  const location = useLocation();
-  const queryParams = new URL(document.location).searchParams;
+  const location = useLocation()
+  const queryParams = new URLSearchParams(location.search)
   const query = queryParams.get('query') || '';
   
   useEffect(() => {
@@ -20,9 +20,10 @@ function News(props) {
     props.setProgress(10)
         
     const url = `https://newsapi.org/v2/top-headlines?country=${props.country}&category=${props.category}&apiKey=${props.apiKey}&page=${page}&q=${query}&pageSize=${props.pageSize}`;
+    const url2 = `https://newsapi.org/v2/everything?q=${query}&sortBy=popularity&apiKey=${props.apiKey}&page=${page}&pageSize=${props.pageSize}`;
     // console.log(query)
 
-    fetch(url)
+    fetch(query? url2 : url)
     .then(response => {
       props.setProgress(30)
       return response.json()
@@ -30,10 +31,11 @@ function News(props) {
     .then(data => {
       props.setProgress(100)
       setapiData(data.articles)
-      setTotalResults(data.totalResults)
+      setTotalResults(query ? 100 : data.totalResults)
       setLoading(false)
     })
-  }, [ query])
+    // eslint-disable-next-line
+  }, [query])
 
   // function handleNext() {
   //   setPage(prev => prev+1)
@@ -46,13 +48,14 @@ function News(props) {
   function fetchData() {
     setLoading(true)
 
-    const url2 = `https://newsapi.org/v2/top-headlines?country=${props.country}&category=${props.category}&apiKey=${props.apiKey}&page=${page+1}&q=${query}&pageSize=${props.pageSize}`
+    const url = `https://newsapi.org/v2/top-headlines?country=${props.country}&category=${props.category}&apiKey=${props.apiKey}&page=${page+1}&q=${query}&pageSize=${props.pageSize}`
+    const url2 = `https://newsapi.org/v2/everything?q=${query}&sortBy=popularity&apiKey=${props.apiKey}&page=${page}&pageSize=${props.pageSize}`;
 
-    fetch(url2)
+    fetch(query? url2 : url)
     .then(response => response.json())
     .then(data => {
       setapiData(prevData => prevData.concat(data.articles))
-      setTotalResults(data.totalResults)
+      setTotalResults(query ? 100 : data.totalResults)
       setLoading(false)
     })
     setPage(prev => prev+1)

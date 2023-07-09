@@ -10,7 +10,7 @@ function Navbar() {
 
     function handleSubmit(event) {
         event.preventDefault()
-        navigate(`/search?query=${input}`);
+        input && navigate(`/search?query=${input}`);
         setInput('')
     }
 
