@@ -24,12 +24,12 @@ function App() {
 
         <Routes>
           <Route index element={<News setProgress={setProgress} apiKey={apiKey}  key='general' pageSize={12} country="in" category="general"/>}/> {/* default route for the app */}
-          <Route path="/business" element={<News setProgress={setProgress} apiKey={apiKey}  key='business' pageSize={12} country="in" category="business"/>}/>
-          <Route path="/health" element={<News setProgress={setProgress} apiKey={apiKey}  key='health' pageSize={12} country="in" category="health"/>}/>
-          <Route path="/science" element={<News setProgress={setProgress} apiKey={apiKey}  key='general' pageSize={12} country="in" category="science"/>}/>
-          <Route path="/sports" element={<News setProgress={setProgress} apiKey={apiKey}  key='sports' pageSize={12} country="in" category="sports"/>}/>
-          <Route path="/technology" element={<News setProgress={setProgress} apiKey={apiKey}  key='technology' pageSize={12} country="in" category="technology"/>}/>
-          <Route path="/search" element={<News setProgress={setProgress} apiKey={apiKey}  key='search' pageSize={5} country="" category=""/>}/>
+          <Route path="/business" element={<News setProgress={setProgress} apiKey={apiKey} key='business' pageSize={12} country="in" category="business"/>}/>
+          <Route path="/health" element={<News setProgress={setProgress} apiKey={apiKey} key='health' pageSize={12} country="in" category="health"/>}/>
+          <Route path="/science" element={<News setProgress={setProgress} apiKey={apiKey} key='general' pageSize={12} country="in" category="science"/>}/>
+          <Route path="/sports" element={<News setProgress={setProgress} apiKey={apiKey} key='sports' pageSize={12} country="in" category="sports"/>}/>
+          <Route path="/technology" element={<News setProgress={setProgress} apiKey={apiKey} key='technology' pageSize={12} country="in" category="technology"/>}/>
+          <Route path="/search" element={<News setProgress={setProgress} apiKey={apiKey} key='search' pageSize={5} country="" category=""/>}/>
           <Route path="*" element={<NoPage/>} /> {/* all the undefinded paths will be handled here leading to NoPage */}
         </Routes>
 

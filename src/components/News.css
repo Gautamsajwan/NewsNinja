@@ -1,9 +1,10 @@
 .news {
-    width: 90%;
-    margin: 25px auto;
+    width: 100%;
+    margin: 20px auto;
 }
 
 .newsCategory {
+    margin: 0 10px;
     padding-bottom: 10px;
     border-bottom: 2px dashed rgb(207, 207, 207);
     text-align: center;
@@ -18,11 +19,11 @@
 }
 
 .cardContainer {
-    margin-top: 20px;
+    margin-top: 10px;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
     gap: 17px;
-    padding: 7px;
+    padding: 7px 10px;
 }
 
 .pageButtons {
